@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE DAY Egypt Section 2026 | Fayoum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'Montserrat', 'sans-serif'],
+                        en: ['Montserrat', 'sans-serif'],
+                        ar: ['Cairo', 'sans-serif']
+                    },
+                    colors: {
+                        ieee: '#00629B',
+                        sand: {
+                            light: '#E5DEC9',
+                            DEFAULT: '#D5CBB4',
+                            warm: '#F2A93B'
+                        },
+                        slate: {
+                            deep: '#233645',
+                            lake: '#4A7892'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #233645;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Frosted glass matching the Fayoum reference card */
+        .frosted-panel {
+            background: rgba(114, 136, 148, 0.36);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .logo-card {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 10px 28px rgba(20, 35, 48, 0.14);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 32px rgba(20, 35, 48, 0.22);
+        }
+
+        .action-btn {
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Subtle text shadow for crisp legibility over the sand illustration */
+        .hero-shadow {
+            text-shadow: 0 2px 14px rgba(25, 40, 52, 0.28);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between select-none sm:select-auto">
+
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" class="w-full h-full">
+            <defs>
+                <!-- Main Desert-to-Deep-Slate Gradient matching reference -->
+                <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#DFD7C4" />
+                    <stop offset="38%" stop-color="#CFC6B0" />
+                    <stop offset="68%" stop-color="#6B7E84" />
+                    <stop offset="100%" stop-color="#223544" />
+                </linearGradient>
+
+                <!-- Dune shading gradients -->
+                <linearGradient id="duneLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#E6DFCE" stop-opacity="0.7" />
+                    <stop offset="100%" stop-color="#C2B79E" stop-opacity="0.2" />
+                </linearGradient>
+
+                <linearGradient id="duneShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#B8AD96" stop-opacity="0.35" />
+                    <stop offset="100%" stop-color="#4A5D68" stop-opacity="0.4" />
+                </linearGradient>
+
+                <!-- Upper Lake Qarun / Rayan Gradient -->
+                <linearGradient id="upperLake" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#4E7B98" />
+                    <stop offset="65%" stop-color="#6A94AE" />
+                    <stop offset="100%" stop-color="#8FB0C2" />
+                </linearGradient>
+
+                <!-- Waterfall Oasis Pools -->
+                <linearGradient id="oasisPool" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#5894B5" />
+                    <stop offset="100%" stop-color="#3C6E8C" />
+                </linearGradient>
+
+                <!-- Gebel El Medawara Conical Hill Gradient -->
+                <radialGradient id="medawaraHill" cx="45%" cy="35%" r="60%">
+                    <stop offset="0%" stop-color="#D7C7A9" />
+                    <stop offset="45%" stop-color="#9E8C6C" />
+                    <stop offset="80%" stop-color="#6E5F47" />
+                    <stop offset="100%" stop-color="#3F392F" />
+                </radialGradient>
+
+                <filter id="softBlur" x="-10%" y="-10%" width="120%" height="120%">
+                    <feGaussianBlur stdDeviation="8" />
+                </filter>
+                <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#1d2d3a" flood-opacity="0.35" />
+                </filter>
+            </defs>
+
+            <!-- Base Sky & Sand Backdrop -->
+            <rect width="1440" height="900" fill="url(#bgGradient)" />
+
+            <!-- Sweeping Sand Dune Ridges -->
+            <path d="M-100,220 C320,140 620,290 1050,180 C1250,130 1400,200 1550,170 L1550,900 L-100,900 Z" fill="url(#duneLight)" />
+            <path d="M-100,450 C260,330 510,520 890,380 C1150,280 1350,410 1550,360 L1550,900 L-100,900 Z" fill="url(#duneShadow)" />
+            <path d="M480,310 C670,290 790,440 1080,390 C1260,360 1380,470 1500,520 L1500,900 L350,900 Z" fill="#C9BFA8" fill-opacity="0.22" />
+
+            <!-- Upper Lake (Lake Qarun / Upper Rayan) -->
+            <g transform="translate(470, 295)">
+                <!-- Sandy Beach Rim -->
+                <ellipse cx="195" cy="52" rx="185" ry="54" fill="#D8CEB8" filter="url(#softBlur)" />
+                <ellipse cx="195" cy="50" rx="172" ry="45" fill="url(#upperLake)" />
+                <!-- Subtle Water Ripples -->
+                <ellipse cx="190" cy="46" rx="135" ry="30" fill="none" stroke="#B6D0DF" stroke-width="1" stroke-opacity="0.4" />
+                <ellipse cx="205" cy="55" rx="95" ry="18" fill="none" stroke="#B6D0DF" stroke-width="1" stroke-opacity="0.3" />
+            </g>
+
+            <!-- Wadi El Rayan Waterfalls & Twin Oasis Pools -->
+            <g transform="translate(515, 480)">
+                <!-- Upper twin pools -->
+                <ellipse cx="62" cy="40" rx="44" ry="28" fill="#8FB3C6" />
+                <ellipse cx="115" cy="42" rx="42" ry="27" fill="#7CA4BA" />
+                <!-- Rock ledge of the waterfall -->
+                <rect x="42" y="55" width="95" height="12" rx="5" fill="#7D6B57" />
+                <!-- Waterfall white foam streams -->
+                <path d="M58,56 L58,72 M70,56 L70,74 M85,56 L85,73 M102,56 L102,74 M114,56 L114,72" stroke="#E2F1F8" stroke-width="3.5" stroke-linecap="round" opacity="0.85" />
+                <!-- Lower plunge pool -->
+                <ellipse cx="88" cy="108" rx="64" ry="42" fill="url(#oasisPool)" />
+                <!-- Tiny wooden bridge / pier -->
+                <rect x="35" y="92" width="38" height="5" rx="2" transform="rotate(-18 35 92)" fill="#8C6239" />
+            </g>
+
+            <!-- Lush Green Palm Groves (Fayoum Oasis Vegetation) -->
+            <g opacity="0.92">
+                <!-- Right Main Grove -->
+                <g transform="translate(760, 355)">
+                    <!-- Soft ground shadow -->
+                    <ellipse cx="105" cy="55" rx="115" ry="42" fill="#4E5B4B" opacity="0.35" filter="url(#softBlur)" />
+                    <!-- Palm canopies -->
+                    <circle cx="35" cy="45" r="14" fill="#4E7D38" /><circle cx="38" cy="42" r="10" fill="#74A952" />
+                    <circle cx="62" cy="34" r="16" fill="#446E30" /><circle cx="65" cy="31" r="11" fill="#6B9E4B" />
+                    <circle cx="88" cy="48" r="15" fill="#4E7D38" /><circle cx="91" cy="45" r="10" fill="#79B056" />
+                    <circle cx="115" cy="30" r="17" fill="#3F662C" /><circle cx="118" cy="27" r="12" fill="#689B48" />
+                    <circle cx="142" cy="44" r="15" fill="#4E7D38" /><circle cx="145" cy="41" r="11" fill="#78AF55" />
+                    <circle cx="168" cy="36" r="14" fill="#446E30" /><circle cx="171" cy="33" r="9" fill="#6EA34D" />
+                    <circle cx="192" cy="52" r="13" fill="#4E7D38" /><circle cx="195" cy="49" r="9" fill="#7BB358" />
+                    <circle cx="75" cy="65" r="14" fill="#3F662C" /><circle cx="78" cy="62" r="10" fill="#689B48" />
+                    <circle cx="108" cy="62" r="16" fill="#4E7D38" /><circle cx="111" cy="59" r="11" fill="#74A952" />
+                    <circle cx="138" cy="68" r="14" fill="#446E30" /><circle cx="141" cy="65" r="10" fill="#6EA34D" />
+                    <circle cx="165" cy="64" r="15" fill="#3F662C" /><circle cx="168" cy="61" r="11" fill="#78AF55" />
+                </g>
+
+                <!-- Center Oasis Palms near Waterfalls -->
+                <g transform="translate(560, 415)">
+                    <circle cx="25" cy="25" r="12" fill="#4E7D38" /><circle cx="27" cy="22" r="8" fill="#78AF55" />
+                    <circle cx="48" cy="18" r="14" fill="#3F662C" /><circle cx="50" cy="15" r="9" fill="#6EA34D" />
+                    <circle cx="70" cy="30" r="11" fill="#4E7D38" /><circle cx="72" cy="27" r="7" fill="#7BB358" />
+                    <circle cx="105" cy="70" r="13" fill="#446E30" /><circle cx="108" cy="67" r="9" fill="#74A952" />
+                    <circle cx="15" cy="110" r="14" fill="#3F662C" /><circle cx="18" cy="107" r="10" fill="#6EA34D" />
+                    <circle cx="135" cy="115" r="13" fill="#4E7D38" /><circle cx="138" cy="112" r="9" fill="#78AF55" />
+                </g>
+            </g>
+
+            <!-- Gebel El Medawara / Conical Desert Formation & Bedouin Camp (Bottom Right) -->
+            <g transform="translate(770, 520)" filter="url(#dropShadow)">
+                <!-- Conical layered mound -->
+                <ellipse cx="95" cy="110" rx="76" ry="62" fill="url(#medawaraHill)" />
+                <ellipse cx="93" cy="102" rx="56" ry="44" fill="none" stroke="#B7A484" stroke-width="3" opacity="0.5" />
+                <ellipse cx="91" cy="94" rx="36" ry="28" fill="none" stroke="#C9B89B" stroke-width="2.5" opacity="0.6" />
+                <!-- Tall slender obelisk / landmark needle on peak -->
+                <polygon points="91,28 88,92 94,92" fill="#D8CFC0" />
+                <!-- Tiny Safari / Bedouin wooden huts around the base -->
+                <rect x="-25" y="135" width="18" height="12" rx="2" transform="rotate(15 -25 135)" fill="#5C4433" />
+                <rect x="10" y="175" width="18" height="12" rx="2" transform="rotate(-10 10 175)" fill="#5C4433" />
+                <rect x="165" y="155" width="16" height="11" rx="2" transform="rotate(25 165 155)" fill="#5C4433" />
+            </g>
+
+            <!-- Bottom Deep Vignette for Perfect Text Contrast -->
+            <rect y="520" width="1440" height="380" fill="url(#bgGradient)" opacity="0.55" />
+        </svg>
+    </div>
+
+    <!-- Language Switcher Pill (Top Corner like Reference) -->
+    <div class="fixed top-5 left-5 z-30">
+        <button id="langToggle" onclick="toggleLanguage()" class="flex items-center gap-2 px-4 py-2 rounded-full bg-white/40 hover:bg-white/60 backdrop-blur-md border border-white/50 text-slate-800 font-en font-bold text-xs shadow-sm transition">
+            <i class="fa-solid fa-globe text-slate-700"></i>
+            <span id="langLabel">EN</span>
+        </button>
+    </div>
+
+    <!-- Toast Notification for Copy Action -->
+    <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 translate-y-3 transition-all duration-300">
+        <div class="flex items-center gap-2.5 bg-slate-900/95 text-white px-5 py-3 rounded-full shadow-xl border border-white/20 text-xs sm:text-sm font-semibold">
+            <i class="fa-solid fa-check text-amber-400"></i>
+            <span id="toastText">تم النسخ بنجاح</span>
+        </div>
+    </div>
+
+    <header class="relative z-20 pt-8 sm:pt-12 px-4">
+        <div class="max-w-3xl mx-auto flex flex-wrap items-center justify-center gap-3.5 sm:gap-5" dir="ltr">
+            
+            <!-- Logo 1: IEEE Egypt Section (Exact match to image_a6be6d.png) -->
+            <div class="logo-card w-28 h-28 sm:w-36 sm:h-36 p-2.5 flex items-center justify-center overflow-hidden">
+                <img src="image_a6be6d.png" alt="IEEE Egypt Section" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <svg viewBox="0 0 220 110" class="w-full h-auto hidden">
+                    <!-- Official IEEE Master Brand Kite -->
+                    <g transform="translate(8, 22)">
+                        <!-- Outer Concave Diamond -->
+                        <path d="M32,0 Q36,18 64,32 Q36,46 32,64 Q28,46 0,32 Q28,18 32,0 Z" fill="#00629B"/>
+                        <!-- Inner White Diamond Ring -->
+                        <path d="M32,7 Q35,20 56,32 Q35,44 32,57 Q29,44 8,32 Q29,20 32,7 Z" fill="none" stroke="#ffffff" stroke-width="2"/>
+                        <!-- Horizontal Magnetic Loop -->
+                        <ellipse cx="32" cy="33" rx="13" ry="5.2" fill="none" stroke="#ffffff" stroke-width="2.6"/>
+                        <!-- Vertical Electric Arrow -->
+                        <line x1="32" y1="49" x2="32" y2="17" stroke="#ffffff" stroke-width="3.2"/>
+                        <polygon points="32,12 27.5,21 36.5,21" fill="#ffffff"/>
+                        <!-- Registered Trademark Symbol -->
+                        <circle cx="52" cy="57" r="4.2" fill="none" stroke="#00629B" stroke-width="1.3"/>
+                        <text x="52" y="59.5" text-anchor="middle" fill="#00629B" font-family="Montserrat, sans-serif" font-weight="800" font-size="6">R</text>
+                    </g>
+                    <!-- IEEE Block Letters -->
+                    <text x="80" y="62" fill="#00629B" font-family="Montserrat, Arial Black, sans-serif" font-weight="900" font-size="45" letter-spacing="1.5">IEEE</text>
+                    <!-- Egypt Section Subtext -->
+                    <text x="81" y="83" fill="#00629B" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="16.5" letter-spacing="0.2">Egypt Section</text>
+                </svg>
+            </div>
+
+            <!-- Logo 2: IEEE SAC EGYPT (Exact match to image_a6bba7.png) -->
+            <div class="logo-card w-28 h-28 sm:w-36 sm:h-36 p-2.5 flex items-center justify-center overflow-hidden">
+                <img src="image_a6bba7.png" alt="IEEE SAC Egypt" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <svg viewBox="0 0 180 150" class="w-full h-auto hidden">
+                    <!-- Accurate Map of Egypt with Sinai & Red Sea -->
+                    <g transform="translate(18, 6)">
+                        <path d="M26,14 
+                                 L44,18 L58,19 L68,14 L77,11 L85,15 L93,15 L106,14 
+                                 L112,32 L106,49 L101,53 L95,43 L87,28 L85,30 
+                                 L98,55 L108,78 L119,96 L118,100 
+                                 L26,100 
+                                 L25,55 L23,35 Z" fill="#00629B"/>
+                        <!-- Nile River & Delta Branches -->
+                        <path d="M77,12 L72,26 L75,35 L71,48 L73,58 L84,71 L80,82 L88,92 L85,100" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/>
+                        <path d="M84,15 L72,26" fill="none" stroke="#ffffff" stroke-width="1.3"/>
+                    </g>
+                    <!-- IEEE SAC EGYPT Text -->
+                    <text x="90" y="125" text-anchor="middle" fill="#00629B" font-family="Montserrat, sans-serif" font-weight="800" font-size="18.5" letter-spacing="0.3">IEEE SAC EGYPT</text>
+                    <text x="90" y="139" text-anchor="middle" fill="#71717A" font-family="Montserrat, sans-serif" font-weight="500" font-size="9.5" letter-spacing="0.2">Student Activities Committee</text>
+                </svg>
+            </div>
+
+            <!-- Logo 3: IEEE Fayoum Student Branch (Exact match to image_a6bb81.png) -->
+            <div class="logo-card w-28 h-28 sm:w-36 sm:h-36 p-2.5 flex items-center justify-center overflow-hidden">
+                <img src="image_a6bb81.png" alt="IEEE Fayoum Student Branch" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <svg viewBox="0 0 210 155" class="w-full h-auto hidden">
+                    <!-- Sun Rays & Dome above IEEE -->
+                    <g fill="#005A92">
+                        <!-- 5 Sharp Sunburst Rays -->
+                        <polygon points="73,37 61,21 77,31"/>
+                        <polygon points="78,31 74,12 85,28"/>
+                        <polygon points="88,27 91,7 95,27"/>
+                        <polygon points="97,29 108,14 103,33"/>
+                        <polygon points="103,35 119,25 106,41"/>
+                        <!-- Sun Core -->
+                        <path d="M77,38 A14,14 0 0,1 103,38 Q90,34 77,38 Z"/>
+
+                        <!-- Striped Dome Arch (Waterwheel / Ribbed Dome) -->
+                        <path d="M53,79 C55,56 72,41 86,39 C76,49 69,63 67,79 Z"/>
+                        <path d="M71,79 C73,61 81,46 88,39 C84,51 82,64 82,79 Z"/>
+                        <path d="M86,79 C87,63 89,49 91,39 C93,49 95,63 96,79 Z"/>
+                        <path d="M100,79 C100,64 98,51 94,39 C101,46 109,61 111,79 Z"/>
+                        <path d="M115,79 C113,63 106,49 96,39 C110,41 127,56 129,79 Z"/>
+                    </g>
+
+                    <!-- Outer Right Gear Arch with Teeth & Holes -->
+                    <g>
+                        <path d="M111,48 
+                                 L121,46 L126,38 L138,39 L141,48 
+                                 L156,55 L165,49 L175,58 L169,68 
+                                 L177,84 L188,87 L189,99 L178,103 
+                                 L174,116 L163,116 
+                                 A48,48 0 0,0 107,55 Z" fill="#005A92"/>
+                        <!-- White Gear Holes -->
+                        <circle cx="131" cy="49" r="3.2" fill="#ffffff"/>
+                        <circle cx="161" cy="63" r="3.2" fill="#ffffff"/>
+                        <circle cx="176" cy="94" r="3.2" fill="#ffffff"/>
+                    </g>
+
+                    <!-- IEEE Kite on Left -->
+                    <g transform="translate(8, 76)">
+                        <path d="M22,0 Q25,13 44,22 Q25,31 22,44 Q19,31 0,22 Q19,13 22,0 Z" fill="#005A92"/>
+                        <path d="M22,4.5 Q24,14 39,22 Q24,30 22,39.5 Q20,30 5,22 Q20,14 22,4.5 Z" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+                        <ellipse cx="22" cy="22.5" rx="9" ry="3.6" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                        <line x1="22" y1="33" x2="22" y2="11" stroke="#ffffff" stroke-width="2.2"/>
+                        <polygon points="22,8 18.8,14.5 25.2,14.5" fill="#ffffff"/>
+                    </g>
+
+                    <!-- Large Central IEEE Text -->
+                    <text x="54" y="117" fill="#005A92" font-family="Montserrat, Arial Black, sans-serif" font-weight="900" font-size="44" letter-spacing="1">IEEE</text>
+
+                    <!-- Bottom Branch Subtitle -->
+                    <text x="118" y="135" text-anchor="middle" fill="#005A92" font-family="Montserrat, sans-serif" font-weight="800" font-size="11.2" letter-spacing="0.2">FAYOUM STUDENT BRANCH</text>
+                </svg>
+            </div>
+
+            <!-- Logo 4: IEEE DAY Wheel (Exact match to image_a6bb46.png) -->
+            <div class="logo-card w-28 h-28 sm:w-36 sm:h-36 p-2 flex items-center justify-center overflow-hidden">
+                <img src="image_a6bb46.png" alt="IEEE Day" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                <svg viewBox="0 0 200 200" class="w-full h-auto hidden">
+                    <g transform="translate(100, 100)">
+                        
+                        <!-- 1. TOP SECTOR (Sky Blue - People Celebrating) -->
+                        <g fill="#009CDE">
+                            <path d="M-28,-66 A72,72 0 0,1 28,-66 L22,-51 A55,55 0 0,0 -22,-51 Z"/>
+                            <!-- Center Person -->
+                            <circle cx="0" cy="-87" r="4"/>
+                            <path d="M-2,-82 L2,-82 L3,-72 L5,-65 L2,-65 L0,-71 L-2,-65 L-5,-65 L-3,-72 Z"/>
+                            <path d="M-2,-81 L-9,-88 M2,-81 L9,-88" stroke="#009CDE" stroke-width="2.5" stroke-linecap="round"/>
+                            <!-- Left Person -->
+                            <circle cx="-21" cy="-83" r="3.8"/>
+                            <path d="M-23,-78 L-19,-78 L-16,-63 L-19,-63 L-21,-70 L-23,-63 L-26,-63 Z"/>
+                            <path d="M-22,-77 L-29,-83 M-19,-77 L-12,-84" stroke="#009CDE" stroke-width="2.3" stroke-linecap="round"/>
+                            <!-- Right Person -->
+                            <circle cx="21" cy="-83" r="3.8"/>
+                            <path d="M19,-78 L23,-78 L26,-63 L23,-63 L21,-70 L19,-63 L16,-63 Z"/>
+                            <path d="M19,-77 L12,-84 M22,-77 L29,-83" stroke="#009CDE" stroke-width="2.3" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- 2. TOP-RIGHT SECTOR (Green - Monitor, Rocket, Wi-Fi) -->
+                        <g fill="#4DAF4A">
+                            <path d="M33,-64 A72,72 0 0,1 71,-8 L54,-6 A55,55 0 0,0 25,-49 Z"/>
+                            <!-- Monitor / Screen -->
+                            <g transform="translate(46, -68) rotate(32)">
+                                <rect x="-11" y="-12" width="22" height="15" rx="1.5" fill="none" stroke="#4DAF4A" stroke-width="2.2"/>
+                                <rect x="-4" y="3" width="8" height="4"/>
+                                <circle cx="-4" cy="-5" r="2"/><circle cx="4" cy="-4" r="2"/><circle cx="0" cy="-8" r="1.8"/>
+                            </g>
+                            <!-- Rocket -->
+                            <g transform="translate(69, -43) rotate(55)">
+                                <path d="M0,-14 C5,-7 5,3 4,8 L-4,8 C-5,3 -5,-7 0,-14 Z"/>
+                                <polygon points="-4,4 -9,9 -4,8"/>
+                                <polygon points="4,4 9,9 4,8"/>
+                                <circle cx="0" cy="-3" r="2" fill="#ffffff"/>
+                            </g>
+                            <!-- Wi-Fi Waves -->
+                            <g transform="translate(74, -18) rotate(78)">
+                                <circle cx="0" cy="0" r="3"/>
+                                <path d="M-6,-5 A8,8 0 0,1 6,-5" fill="none" stroke="#4DAF4A" stroke-width="2.3" stroke-linecap="round"/>
+                                <path d="M-10,-9 A13,13 0 0,1 10,-9" fill="none" stroke="#4DAF4A" stroke-width="2.3" stroke-linecap="round"/>
+                                <path d="M-14,-13 A18,18 0 0,1 14,-13" fill="none" stroke="#4DAF4A" stroke-width="2.3" stroke-linecap="round"/>
+                            </g>
+                        </g>
+
+                        <!-- 3. BOTTOM-RIGHT SECTOR (Purple - Solar, Cloud, Leaf) -->
+                        <g fill="#8E258C">
+                            <path d="M71,-2 A72,72 0 0,1 35,63 L27,48 A55,55 0 0,0 54,-2 Z"/>
+                            <!-- Solar Panel -->
+                            <g transform="translate(79, 13) rotate(100)">
+                                <polygon points="-12,-8 12,-8 15,4 -15,4" fill="none" stroke="#8E258C" stroke-width="2"/>
+                                <line x1="-6" y1="-8" x2="-7" y2="4" stroke="#8E258C" stroke-width="1.5"/>
+                                <line x1="6" y1="-8" x2="7" y2="4" stroke="#8E258C" stroke-width="1.5"/>
+                                <line x1="-13" y1="-2" x2="13" y2="-2" stroke="#8E258C" stroke-width="1.5"/>
+                                <rect x="-2" y="4" width="4" height="6"/>
+                            </g>
+                            <!-- Cloud with Idea Bulb -->
+                            <g transform="translate(65, 43) rotate(-45)">
+                                <path d="M-10,4 A6,6 0 0,1 -5,-6 A7,7 0 0,1 7,-5 A5,5 0 0,1 10,4 Z"/>
+                                <circle cx="0" cy="-1" r="2.8" fill="#ffffff"/>
+                            </g>
+                            <!-- Pine / Leaf -->
+                            <g transform="translate(45, 65) rotate(145)">
+                                <polygon points="0,-14 -8,4 8,4"/>
+                                <rect x="-1.5" y="4" width="3" height="5"/>
+                            </g>
+                        </g>
+
+                        <!-- 4. BOTTOM SECTOR (Crimson Red - Tower, Brain, Gears) -->
+                        <g fill="#D9232E">
+                            <path d="M29,66 A72,72 0 0,1 -29,66 L-22,51 A55,55 0 0,0 22,51 Z"/>
+                            <!-- Power Tower (Right) -->
+                            <g transform="translate(22, 78) rotate(-18)">
+                                <path d="M-6,12 L-2,-8 L2,-8 L6,12 M-8,-2 L8,-2 M-6,4 L6,4" fill="none" stroke="#D9232E" stroke-width="2"/>
+                            </g>
+                            <!-- Brain / Tech Node (Center) -->
+                            <g transform="translate(-2, 79)">
+                                <path d="M-9,0 C-9,-6 9,-6 9,0 C9,5 4,8 0,8 C-5,8 -9,5 -9,0 Z"/>
+                                <circle cx="-3" cy="-1" r="1.5" fill="#ffffff"/>
+                                <circle cx="3" cy="1" r="1.5" fill="#ffffff"/>
+                            </g>
+                            <!-- Gears (Left) -->
+                            <g transform="translate(-25, 76)">
+                                <circle cx="0" cy="0" r="6" fill="none" stroke="#D9232E" stroke-width="3" stroke-dasharray="3 2"/>
+                                <circle cx="9" cy="4" r="4.5" fill="none" stroke="#D9232E" stroke-width="2.5" stroke-dasharray="2.5 2"/>
+                            </g>
+                        </g>
+
+                        <!-- 5. BOTTOM-LEFT SECTOR (Orange - Wind Turbine, Train, Building) -->
+                        <g fill="#F37021">
+                            <path d="M-35,63 A72,72 0 0,1 -71,-2 L-54,-2 A55,55 0 0,0 -27,48 Z"/>
+                            <!-- Wind Turbine -->
+                            <g transform="translate(-52, 66)">
+                                <line x1="0" y1="0" x2="7" y2="-12" stroke="#F37021" stroke-width="2.2"/>
+                                <path d="M0,0 L-12,-4 M0,0 L4,12 M0,0 L6,-11" stroke="#F37021" stroke-width="2.2" stroke-linecap="round"/>
+                            </g>
+                            <!-- Train / Transit -->
+                            <g transform="translate(-69, 34) rotate(-62)">
+                                <rect x="-10" y="-5" width="20" height="10" rx="2"/>
+                                <circle cx="-5" cy="0" r="1.5" fill="#ffffff"/>
+                                <circle cx="0" cy="0" r="1.5" fill="#ffffff"/>
+                                <circle cx="5" cy="0" r="1.5" fill="#ffffff"/>
+                            </g>
+                            <!-- Skyscraper Building -->
+                            <g transform="translate(-79, 5) rotate(-85)">
+                                <rect x="-6" y="-12" width="12" height="22" rx="1"/>
+                                <circle cx="-2" cy="-8" r="1" fill="#ffffff"/><circle cx="2" cy="-8" r="1" fill="#ffffff"/>
+                                <circle cx="-2" cy="-3" r="1" fill="#ffffff"/><circle cx="2" cy="-3" r="1" fill="#ffffff"/>
+                                <circle cx="-2" cy="2" r="1" fill="#ffffff"/><circle cx="2" cy="2" r="1" fill="#ffffff"/>
+                            </g>
+                        </g>
+
+                        <!-- 6. TOP-LEFT SECTOR (Gold/Amber - Plane, City, Satellite Dish) -->
+                        <g fill="#F99D1C">
+                            <path d="M-71,-8 A72,72 0 0,1 -33,-64 L-25,-49 A55,55 0 0,0 -54,-6 Z"/>
+                            <!-- Airplane -->
+                            <g transform="translate(-80, -18) rotate(-40)">
+                                <path d="M0,-10 L2,-3 L10,0 L2,2 L1,8 L4,10 L-4,10 L-1,8 L-2,2 L-10,0 L-2,-3 Z"/>
+                            </g>
+                            <!-- Factory / City -->
+                            <g transform="translate(-68, -44) rotate(-52)">
+                                <rect x="-10" y="-4" width="7" height="12"/>
+                                <rect x="-2" y="-9" width="7" height="17"/>
+                                <rect x="6" y="-2" width="6" height="10"/>
+                            </g>
+                            <!-- Satellite Dish -->
+                            <g transform="translate(-45, -70) rotate(-25)">
+                                <path d="M-10,-4 A12,12 0 0,0 10,-4 Z"/>
+                                <line x1="0" y1="-4" x2="0" y2="-11" stroke="#F99D1C" stroke-width="2"/>
+                                <circle cx="0" cy="-11" r="2"/>
+                                <polygon points="-4,6 4,6 0,-2"/>
+                            </g>
+                        </g>
+
+                        <!-- CENTER BLUE GLOBE & IEEE DAY TEXT -->
+                        <circle cx="0" cy="0" r="49" fill="#00629B"/>
+                        <!-- Globe Grid Lines -->
+                        <g fill="none" stroke="#007BC0" stroke-width="1.4" opacity="0.65">
+                            <ellipse cx="0" cy="0" rx="22" ry="48"/>
+                            <ellipse cx="0" cy="0" rx="39" ry="48"/>
+                            <line x1="-48" y1="0" x2="48" y2="0"/>
+                            <path d="M-44,-20 Q0,-12 44,-20"/>
+                            <path d="M-44,20 Q0,12 44,20"/>
+                        </g>
+
+                        <!-- IEEE DAY Stacked Typography -->
+                        <text x="0" y="-6" text-anchor="middle" fill="#ffffff" font-family="Montserrat, sans-serif" font-weight="800" font-size="27" letter-spacing="0.5">IEEE</text>
+                        <text x="0" y="23" text-anchor="middle" fill="#ffffff" font-family="Montserrat, sans-serif" font-weight="800" font-size="30" letter-spacing="0.5">DAY</text>
+
+                        <!-- Curved Tagline Along Bottom Rim -->
+                        <path id="ieeeDayTaglineArc" d="M -39,12 A 40,40 0 0,0 39,12" fill="none"/>
+                        <text fill="#ffffff" font-family="Montserrat, sans-serif" font-weight="600" font-size="4.7" letter-spacing="0.2">
+                            <textPath href="#ieeeDayTaglineArc" startOffset="50%" text-anchor="middle">
+                                Leveraging Technology for a Better Tomorrow
+                            </textPath>
+                        </text>
+                    </g>
+                </svg>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="relative z-20 flex-1 flex items-center py-8 sm:py-12 px-5 sm:px-12 lg:px-20">
+        <div class="max-w-6xl w-full mx-auto">
+            <div class="max-w-2xl space-y-5">
+                
+                <!-- Official Event Header (Matching Screenshot) -->
+                <div class="space-y-1.5" dir="ltr">
+                    <h2 class="font-en font-extrabold text-xl sm:text-3xl md:text-4xl tracking-wider text-white uppercase hero-shadow">
+                        IEEE DAY EGYPT SECTION 2026
+                    </h2>
+                    <div class="flex items-center gap-2.5 text-amber-400 font-en font-semibold text-xs sm:text-sm">
+                        <span class="w-5 h-[2px] bg-amber-400 inline-block"></span>
+                        <span>Powered by IEEE Egypt Section &amp; IEEE SAC Egypt</span>
+                    </div>
+                    <p class="font-en font-bold text-white/95 text-xs sm:text-sm pt-1 hero-shadow">
+                        Hosted by IEEE Fayoum Student Branch
+                    </p>
+                </div>
+
+                <!-- Giant FAYOUM Title -->
+                <div dir="ltr">
+                    <h1 id="mainTitle" class="font-en font-black text-5xl sm:text-7xl tracking-tight text-white uppercase hero-shadow leading-none">
+                        FAYOUM
+                    </h1>
+                </div>
+
+                <!-- Frosted Glass Welcome Box (Replacing long content with a concise welcome statement) -->
+                <div class="frosted-panel rounded-2xl p-4 sm:p-5 shadow-lg">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+                        <div class="font-en text-2xl sm:text-3xl font-semibold text-white/90 shrink-0 tracking-wide border-b sm:border-b-0 sm:border-l border-white/30 pb-2 sm:pb-0 sm:pl-4" dir="ltr">
+                            ⲫⲓⲟⲙ
+                        </div>
+                        <p id="welcomeText" class="text-sm sm:text-base text-white font-semibold leading-relaxed">
+                            أهلاً بكم في <span class="text-amber-300 font-extrabold">IEEE Day 2026</span> على أرض الفيوم! سعداء بوجودكم معنا في رحلة تجمعنا وسط طبيعة شلالات وادي الريان وتاريخ وادي الحيتان. لأي استفسار أو مساعدة خلال اليوم، تواصلوا معنا مباشرة:
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Direct Contact Buttons Section (Clean, human-crafted layout) -->
+                <div class="pt-2 space-y-4">
+                    
+                    <!-- Organizer 1: Amir Raafat -->
+                    <div class="frosted-panel rounded-2xl p-4 sm:p-5 space-y-3.5">
+                        <div class="flex items-center justify-between border-b border-white/20 pb-2.5">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#F2A93B]"></span>
+                                <h3 class="font-en font-extrabold text-base sm:text-lg text-white tracking-wide">Amir Raafat</h3>
+                            </div>
+                            <span class="font-en text-xs font-semibold text-white/80" dir="ltr">01203002774</span>
+                        </div>
+
+                        <!-- Action Buttons for Amir Raafat (WhatsApp & LinkedIn) -->
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <!-- WhatsApp Button -->
+                            <a href="https://wa.me/201203002774" target="_blank" rel="noopener noreferrer"
+                               class="action-btn flex items-center justify-center gap-2 py-3 px-3.5 rounded-full bg-[#F2A93B] hover:bg-[#f5b553] text-slate-900 font-bold text-xs sm:text-sm shadow-md">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span data-ar="واتساب" data-en="WhatsApp">واتساب</span>
+                            </a>
+
+                            <!-- LinkedIn Button -->
+                            <a href="https://www.linkedin.com/in/amir-raafat-cs" target="_blank" rel="noopener noreferrer"
+                               class="action-btn flex items-center justify-center gap-2 py-3 px-3.5 rounded-full bg-[#00629B] hover:bg-[#0074b8] text-white font-bold text-xs sm:text-sm shadow-md border border-white/20">
+                                <i class="fa-brands fa-linkedin-in text-base"></i>
+                                <span class="font-en">LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Organizer 2: Menna Mahmoud -->
+                    <div class="frosted-panel rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5">
+                        <div class="flex items-center gap-2.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-[#00B5E2]"></span>
+                            <h3 class="font-en font-extrabold text-base sm:text-lg text-white tracking-wide">Menna Mahmoud</h3>
+                        </div>
+
+                        <div class="flex items-center gap-2.5">
+                            <a href="https://www.linkedin.com/in/mennna-mahmoud/" target="_blank" rel="noopener noreferrer"
+                               class="action-btn flex-1 sm:flex-initial flex items-center justify-center gap-2.5 py-2.5 px-6 rounded-full bg-[#00629B] hover:bg-[#0074b8] text-white font-bold text-xs sm:text-sm shadow-md border border-white/25">
+                                <i class="fa-brands fa-linkedin-in text-base"></i>
+                                <span class="font-en">LinkedIn Profile</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let currentLang = 'ar';
+
+        function toggleLanguage() {
+            const htmlEl = document.documentElement;
+            const langLabel = document.getElementById('langLabel');
+            const welcomeText = document.getElementById('welcomeText');
+            const translatableSpans = document.querySelectorAll('[data-ar]');
+
+            if (currentLang === 'ar') {
+                currentLang = 'en';
+                htmlEl.setAttribute('lang', 'en');
+                htmlEl.setAttribute('dir', 'ltr');
+                langLabel.textContent = 'AR';
+                welcomeText.innerHTML = 'Welcome to <span class="text-amber-300 font-extrabold">IEEE Day 2026</span> in Fayoum! From the desert ridges of Gebel El Medawara to Wadi El Rayan’s waterfalls and Wadi El Hitan, reach out to us directly anytime:';
+                translatableSpans.forEach(el => {
+                    el.textContent = el.getAttribute('data-en');
+                });
+            } else {
+                currentLang = 'ar';
+                htmlEl.setAttribute('lang', 'ar');
+                htmlEl.setAttribute('dir', 'rtl');
+                langLabel.textContent = 'EN';
+                welcomeText.innerHTML = 'أهلاً بكم في <span class="text-amber-300 font-extrabold">IEEE Day 2026</span> على أرض الفيوم! سعداء بوجودكم معنا في رحلة تجمعنا وسط طبيعة شلالات وادي الريان وتاريخ وادي الحيتان. لأي استفسار أو مساعدة خلال اليوم، تواصلوا معنا مباشرة:';
+                translatableSpans.forEach(el => {
+                    el.textContent = el.getAttribute('data-ar');
+                });
+            }
+        }
+    </script>
+</body>
+</html>
